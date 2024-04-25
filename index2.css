@@ -292,11 +292,11 @@ i {
 }
 
 .contact-page {
-  background-image: url('wallpaper6.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover; /* Cover the entire background */
-  background-position: center; /* Center the background image */
-  background-repeat: no-repeat; /* Do not repeat the background image */
-  height: 100vh; /* Set the height of the container to fill the viewport */
+  background-image: url('wallpaper6.jpg'); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
+  height: 100vh; 
 }
 
 
@@ -357,8 +357,7 @@ header {
   padding: 12px 20px;
   background-color: #ffa600; 
   color: #fff;
-  
-  border-radius: 4px;
+  border-radius: 12px;
   cursor: pointer;
 }
 
