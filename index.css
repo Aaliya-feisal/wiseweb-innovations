@@ -1,0 +1,213 @@
+:root {
+  --maincolor: #08bc17;
+  --secondclr: white;
+  --thirdcolor :#2596be;
+  /* --thirdcolor: #9b3705; */
+}
+/* body */
+* {
+  font-family: sans-serif;
+  margin: 0;
+    padding: 0;
+  box-sizing: border-box;
+  transition: all 0.2s;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+/* navbar part */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 3%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  z-index: 100000;
+  background-color: #0c0e13; /* Transparent black color */
+}
+
+.header #logo {
+  color:white;
+  font-size: 2rem;
+}
+
+.header {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.header #logo span {
+  color: var(--thirdcolor);
+}
+
+.big-W {
+  font-size: 2em; /* Increase the font size */
+  font-weight: bold; /* Make the font bold */
+  color: var(--thirdcolor); /* Use the third color for the big W */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle text shadow */
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0%;
+  padding: 0%;
+}
+
+.navbar ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  padding: 5px 10px;
+  font-size: 1rem;
+  color: var(--thirdcolor);
+  flex: 100;
+  text-align: right;
+}
+
+.navbar ul li a.active {
+  color: var(--secondclr); /* A contrasting color for the active link */
+  font-weight: bold; /* Make the active link bold */
+  border-bottom: 2px solid var(--secondclr); /* Underline the active link */
+}
+
+.navbar a:hover {
+  color: white;
+  
+}
+
+
+/* HERO SECTION*/
+.hero {
+  position: relative; /* Added */
+  background-image: url('wallpaper5.jpg'); /* Replace 'wallpaper2.jpg' with your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 90vh;
+  color: #fff;
+  display: flex; /* Added */
+  justify-content: center; /* Added */
+  align-items: center; /* Added */
+}
+
+.hero-heading {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  
+}
+
+.hero-caption{
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-btn {
+  color: #000;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border: 2px solid #2596be;
+  background: #2596be;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* FOOTER SECTION */
+.footer {
+  background-color: #f8f9fa;
+  color: #6c757d;
+ padding: 1px 0;  
+  text-align: center;
+}
+
+
+/* ABOUT US */
+/* About Us Page Styles */
+
+/* About Us Page Styles */
+
+/* Container Styles */
+.about-us {
+  padding: 50px 0;
+}
+
+/* Section Heading Styles */
+.about-us h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Card Layout Styles */
+.about-us .card {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Icon Styles */
+.about-us .card i {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--thirdcolor);
+}
+
+/* Card Title Styles */
+.about-us .card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--thirdcolor);
+}
+
+/* Card Description Styles */
+.about-us .card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Accordion Styles */
+.about-us .accordion-item {
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 10px;
+}
+
+.about-us .accordion-header {
+  background-color: #f8f9fa;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.about-us .accordion-header:hover {
+  background-color: #e9ecef;
+}
+
+.about-us .accordion-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--thirdcolor);
+}
+
+.about-us .accordion-body {
+  padding: 15px;
+  
+}
+
+.about-us .accordion-body p {
+  font-size: 1rem;
+  line-height: 1.6;
+}

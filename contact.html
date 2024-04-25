@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <link rel="stylesheet" href="index2.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"><a href="index2.html"><span style="font-weight: 800;">W</span>ise<span style="font-weight: 900;">W</span>eb</a></div>
+        <div class="options">
+          <a href="index2.html">Home</a>
+          <a href="AboutUs.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+  <!-- <div class="container">
+    <form id="contactForm" action="#" onsubmit="return validateForm()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+   -->
+   <div class="centered-container">
+    <div class="form-container">
+      <form id="contactForm" action="#">
+        <h2>Contact Us</h2>
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Message" rows="5" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+  
+  function validateForm() {
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var message = document.getElementById('message').value;
+  
+  if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+    alert('Please fill out all fields');
+    return false; // Prevent form submission
+  }
+  
+  return true; // Allow form submission
+}
+
+  
+  
+  
+  
+  // Initialize EmailJS with your service ID
+    emailjs.init("service_1t09q9l");
+    
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      // Get form values
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
+    
+      // Send email using EmailJS
+      emailjs.send("service_1t09q9l", "template_261ne3m", {
+        from_name: name,
+        from_email: email,
+        message: message,
+        to_email: "COMPANY_EMAIL_ADDRESS"
+      }).then(function(response) {
+        console.log('Email sent successfully:', response);
+        alert('Thank you for your message! We will get back to you soon.');
+      }, function(error) {
+        console.error('Email sending failed:', error);
+        alert('Oops! Something went wrong. Please try again later.');
+      });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WiseWeb Innovations Ltd</title>
+  <link rel="stylesheet" href="index2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo"><a href="index2.html"><span style="font-weight: 800;">W</span>ise<span style="font-weight: 900;">W</span>eb </a></div>
+    <div class="options">
+      <a href="index2.html">Home</a>
+      <a href="AboutUs.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+
+  <!-- Main content -->
+<!-- Main content -->
+<div class="container">
+    <img src="wallpaper8.jpg" alt="Hero Image" class="hero-image">
+    <div class="text-content">
+      <h1>Welcome to WiseWeb Innovations Ltd</h1>
+      <p class="animated-text">Leading management-consulting firm collaborating with governments, corporations, and private companies to deliver results.</p>
+      <button id="contactBtn"><a href="contact.html">GET IN TOUCH</button></a>
+    </div>
+  </div>
+  
+  
+<!-- Featured Projects -->
+<section class="featured-projects">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="project-container">
+      <div class="project" onclick="toggleDescription(this)" id="firstCard">
+        <div class="project-content">
+          <h3 class="project-title">Water Supply System Baseline</h3>
+          <p class="project-description">Client: Jubba Water Supply</p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title">Baseline for water need and consumption for water supply system (distribution system of more than 10,000HH in Kismayo town)</span>
+          <p class="more-info"></p>
+        </div>
+      </div>
+
+      <div class="project" onclick="toggleDescription(this)">
+        <div class="project-content">
+          <h3 class="project-title">Third-party Monitoring</h3>
+          <p class="project-description">Client: CARE Somalia</p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title">Third-party monitoring for textbook delivery verification in Galmudug State, Jubbaland State, South West State, Hirshabelle State, and Benadir Administration</span>
+          <p class="more-info"></p>
+        </div>
+      </div>
+
+      <div class="project" onclick="toggleDescription(this)">
+        <div class="project-content">
+          <h3 class="project-title">Value Chain Analysis</h3>
+          <p class="project-description">Client: Coopi Somalia</p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title">Baseline for value chain/market system analysis of agricultural crops</span>
+          <p class="more-info"></p>
+        </div>
+      </div>
+    </div>
+    <div class="hover-background"></div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; 2024 WiseWeb Innovations Ltd. All rights reserved.</p>
+  </div>
+
+  <script>
+    function toggleDescription(card) {
+      card.querySelector('.card-reveal').classList.toggle('active');
+    }
+
+    // Close card reveal when close icon is clicked
+    document.querySelectorAll('.close-icon').forEach(icon => {
+      icon.addEventListener('click', function(event) {
+        event.stopPropagation();
+        this.parentElement.parentElement.classList.remove('active');
+      });
+    });
+
+ 
+  </script>
+</body>
+</html>
