@@ -500,6 +500,89 @@ header {
 }
 
 
+/* PROJECTS PAGE STYLING  */
+
+.title-container {
+  margin: 0 60px; /* Increase margin on the sides */
+}
+
+.projects-container {
+  margin: 0 60px; /* Increase margin on the sides */
+}
+
+
+.portfolio-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 100px; /* Increased space between projects */
+}
+
+.projects-info {
+  flex: 1;
+  padding: 20px;
+}
+
+.projects-title {
+  font-size: 24px;
+  margin-bottom: 20px; /* Increased space between title and description */
+  color: #0d0073;
+  
+}
+
+.projects-description {
+  font-size: 16px;
+  margin-top: 20px; /* Increased space between title and description */
+  line-height: 1.5; /* Increased line height for better readability */
+  margin-bottom: 40px; /* Increased space between description and next project */
+  color: #0d0073;
+}
+
+
+/* Image Styling */
+img {
+  width: 25%;
+  height: 216px;
+  border-radius: 131px; /* Simplified border-radius */
+  border: none;
+  box-shadow: none;
+}
+
+.title-section p {
+  color: #ffa600;
+  font-weight: bolder;
+  font-size: large;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.title-section h2 {
+  text-align: center;
+  margin-bottom: 100px;
+  font-size: 37px;
+}
+
+/* Additional styles */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.portfolio-item:nth-of-type(odd) {
+  flex-direction: row; /* Align images to the right on odd items */
+}
+
+.portfolio-item:nth-of-type(even) {
+  flex-direction: row-reverse; /* Align images to the left on even items */
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .header {
