@@ -222,7 +222,7 @@ body {
   }
   .capabilities h3{
       margin-bottom: 20px;
-      border-left: 3px solid #ffa600;
+      border-left: 6px solid #ffa600;
     
   }
   .capabilities h3 br{
@@ -531,16 +531,16 @@ header {
 }
 
 .projects-description {
-  font-size: 16px;
+  font-size: 20px;
   margin-top: 20px; /* Increased space between title and description */
-  line-height: 1.5; /* Increased line height for better readability */
+  line-height: 1.8; /* Increased line height for better readability */
   margin-bottom: 40px; /* Increased space between description and next project */
   color: #0d0073;
 }
 
 
 /* Image Styling */
-img {
+.portfolio-item img {
   width: 25%;
   height: 216px;
   border-radius: 131px; /* Simplified border-radius */
@@ -582,6 +582,36 @@ h6 {
 .portfolio-item:nth-of-type(even) {
   flex-direction: row-reverse; /* Align images to the left on even items */
 }
+
+@media screen and (max-width: 768px) {
+  .portfolio-item {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
+
+  .projects-info {
+    padding: 10px; /* Reduce padding for smaller screens */
+    text-align: center; /* Center align text on smaller screens */
+  }
+
+  .projects-title {
+    font-size: 18px; /* Decrease font size for smaller screens */
+  }
+
+  .projects-description {
+    font-size: 14px; /* Decrease font size for smaller screens */
+  }
+
+  .title-section h2 {
+    margin-bottom: 50px; /* Decrease margin for smaller screens */
+    font-size: 24px; /* Decrease font size for smaller screens */
+  }
+
+  img {
+    order: -1; /* Move the image above the text */
+    margin-bottom: 20px; /* Add space between image and text */
+  }
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
