@@ -6,9 +6,14 @@
   <title>Contact Us</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
-    emailjs.init("qIc6Scf1jQzhtbi7p");
-  </script>
+  <script type="text/javascript">
+    (function() {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init({
+          publicKey: "qIc6Scf1jQzhtbi7p",
+        });
+    })();
+</script>
   <link rel="stylesheet" href="index2.css">
 </head>
 <body class="contact-page">
@@ -32,7 +37,7 @@
         <input type="text" id="name" placeholder="Name" required>
         <input type="email" id="email" placeholder="Email" required>
         <textarea id="message" placeholder="Message" rows="5" required></textarea>
-        <button type="submit">Submit</button>
+        <button onclick="SendMail()" type="submit">Submit</button>
       </form>
     </div>
   </div>
@@ -50,22 +55,48 @@
   
       return true; // Allow form submission
     }
-
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-      event.preventDefault();
+    function SendMail(){
+      // Collect form data
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
 
       if (!validateForm()) return;
 
-      // Send email using EmailJS
-      emailjs.sendForm('service_1t09q9l', 'template_261ne3m', this)
+      // Prepare parameters for the user's message
+      var userParams = {
+        from_name: name,
+        email: email,
+        message: message
+      };
+
+      // Prepare parameters for the automated reply
+      var replyParams = {
+        user_name : name,
+        email: email,
+       // message: 'Thank you for contacting us! We will get back to you as soon as possible.'
+      };
+
+      // Send the user's message
+      emailjs.send("service_1t09q9l", "template_1mu4kan", userParams)
+      .then(function(response) {
+        console.log('User message sent successfully:', response);
+
+        // Send automated reply after user's message is sent
+        emailjs.send("service_1t09q9l", "template_6rg0p2s", replyParams)
         .then(function(response) {
-          console.log('Email sent successfully:', response);
-          alert('Thank you for your message! We will get back to you soon.');
+          console.log('Automated reply sent successfully:', response);
         }, function(error) {
-          console.error('Email sending failed:', error);
-          alert('Oops! Something went wrong. Please try again later.');
+          console.error('Error sending automated reply:', error);
         });
-    });
+
+        alert('Thank you for your message! We will get back to you soon.');
+      }, function(error) {
+        console.error('Error sending user message:', error);
+        alert('Oops! Something went wrong. Please try again later.');
+      });
+    }
   </script>
+    
 </body>
 </html>
